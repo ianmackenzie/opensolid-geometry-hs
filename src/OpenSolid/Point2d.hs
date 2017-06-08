@@ -1,6 +1,8 @@
 module OpenSolid.Point2d
     ( origin
     , coordinates
+    , xCoordinate
+    , yCoordinate
     , vectorFrom
     , distanceAlong
     ) where
@@ -18,6 +20,16 @@ origin =
 coordinates :: Point2d -> ( Float, Float )
 coordinates (Point2d coordinates_) =
     coordinates_
+
+
+xCoordinate :: Point2d -> Float
+xCoordinate (Point2d ( x, _ )) =
+    x
+
+
+yCoordinate :: Point2d -> Float
+yCoordinate (Point2d ( _, y )) =
+    y
 
 
 vectorFrom :: Point2d -> Point2d -> Vector2d
