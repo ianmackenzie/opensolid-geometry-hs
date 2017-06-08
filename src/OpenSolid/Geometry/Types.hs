@@ -10,27 +10,27 @@ module OpenSolid.Geometry.Types
     ) where
 
 
-data Point2d
+newtype Point2d
     = Point2d ( Float, Float ) deriving (Eq, Show)
 
 
-data Point3d
+newtype Point3d
     = Point3d ( Float, Float, Float ) deriving (Eq, Show)
 
 
-data Vector2d
+newtype Vector2d
     = Vector2d ( Float, Float ) deriving (Eq, Show)
 
 
-data Vector3d
+newtype Vector3d
     = Vector3d ( Float, Float, Float ) deriving (Eq, Show)
 
 
-data Direction2d
+newtype Direction2d
     = Direction2d ( Float, Float ) deriving (Eq, Show)
 
 
-data Direction3d
+newtype Direction3d
     = Direction3d ( Float, Float, Float ) deriving (Eq, Show)
 
 
