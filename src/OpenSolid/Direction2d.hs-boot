@@ -5,4 +5,4 @@ module OpenSolid.Direction2d
 import OpenSolid.Geometry.Types
 
 
-components :: Direction2d -> ( Float, Float )
+components :: Direction2d -> ( Double, Double )

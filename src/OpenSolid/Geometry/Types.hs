@@ -10,39 +10,60 @@ module OpenSolid.Geometry.Types
     ) where
 
 
-newtype Point2d
-    = Point2d ( Float, Float ) deriving (Eq, Show)
+data Point2d
+    = Point2d
+        {-# UNPACK #-} !Double
+        {-# UNPACK #-} !Double
+        deriving (Eq, Show)
 
 
-newtype Point3d
-    = Point3d ( Float, Float, Float ) deriving (Eq, Show)
+data Point3d
+    = Point3d
+        {-# UNPACK #-} !Double
+        {-# UNPACK #-} !Double
+        {-# UNPACK #-} !Double
+        deriving (Eq, Show)
 
 
-newtype Vector2d
-    = Vector2d ( Float, Float ) deriving (Eq, Show)
+data Vector2d
+    = Vector2d
+        {-# UNPACK #-} !Double
+        {-# UNPACK #-} !Double
+        deriving (Eq, Show)
 
 
-newtype Vector3d
-    = Vector3d ( Float, Float, Float ) deriving (Eq, Show)
+data Vector3d
+    = Vector3d
+        {-# UNPACK #-} !Double
+        {-# UNPACK #-} !Double
+        {-# UNPACK #-} !Double
+        deriving (Eq, Show)
 
 
-newtype Direction2d
-    = Direction2d ( Float, Float ) deriving (Eq, Show)
+data Direction2d
+    = Direction2d
+        {-# UNPACK #-} !Double
+        {-# UNPACK #-} !Double
+        deriving (Eq, Show)
 
 
-newtype Direction3d
-    = Direction3d ( Float, Float, Float ) deriving (Eq, Show)
+data Direction3d
+    = Direction3d
+        {-# UNPACK #-} !Double
+        {-# UNPACK #-} !Double
+        {-# UNPACK #-} !Double
+        deriving (Eq, Show)
 
 
 data Axis2d
     = Axis2d
-        { originPoint :: Point2d
-        , direction :: Direction2d
+        { originPoint :: !Point2d
+        , direction :: !Direction2d
         } deriving (Eq, Show)
 
 
 data Axis3d
     = Axis3d
-        { originPoint :: Point3d
-        , direction :: Direction3d
+        { originPoint :: !Point3d
+        , direction :: !Direction3d
         } deriving (Eq, Show)
