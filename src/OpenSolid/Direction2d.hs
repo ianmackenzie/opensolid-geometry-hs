@@ -1,9 +1,10 @@
 module OpenSolid.Direction2d
     ( x
     , y
-    , fromAngle
+    , withPolarAngle
     , components
     ) where
+
 
 import OpenSolid.Geometry.Types
 
@@ -18,8 +19,8 @@ y =
     Direction2d 0 1
 
 
-fromAngle :: Double -> Direction2d
-fromAngle angle =
+withPolarAngle :: Double -> Direction2d
+withPolarAngle angle =
     Direction2d (cos angle) (sin angle)
 
 

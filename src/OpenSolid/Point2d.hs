@@ -1,9 +1,9 @@
 module OpenSolid.Point2d
     ( origin
+    , withCoordinates
     , coordinates
     , xCoordinate
     , yCoordinate
-    , vectorFrom
     , distanceAlong
     ) where
 
@@ -15,6 +15,11 @@ import {-# SOURCE #-} qualified OpenSolid.Axis2d as Axis2d
 origin :: Point2d
 origin =
     Point2d 0 0
+
+
+withCoordinates :: ( Double, Double ) -> Point2d
+withCoordinates ( x, y ) =
+    Point2d x y
 
 
 coordinates :: Point2d -> ( Double, Double )
@@ -32,12 +37,7 @@ yCoordinate (Point2d _ y) =
     y
 
 
-vectorFrom :: Point2d -> Point2d -> Vector2d
-vectorFrom (Point2d x1 y1) (Point2d x2 y2) =
-    Vector2d (x2 - x1) (y2 - y1)
-
-
 distanceAlong :: Axis2d -> Point2d -> Double
 distanceAlong axis point =
-    Vector2d.componentIn (Axis2d.direction axis)
-        $ vectorFrom (Axis2d.originPoint axis) point
+    Vector2d.componentIn (Axis2d.direction axis) $
+        Vector2d.from (Axis2d.originPoint axis) point

@@ -1,7 +1,9 @@
 module OpenSolid.Vector2d
     ( zero
-    , componentIn
+    , withComponents
+    , from
     , components
+    , componentIn
     , xComponent
     , yComponent
     , squaredLength
@@ -17,14 +19,24 @@ zero =
     Vector2d 0 0
 
 
-componentIn :: Direction2d -> Vector2d -> Double
-componentIn (Direction2d dx dy) (Vector2d vx vy) =
-    vx * dx + vy * dy
+withComponents :: ( Double, Double ) -> Vector2d
+withComponents ( x, y ) =
+    Vector2d x y
+
+
+from :: Point2d -> Point2d -> Vector2d
+from (Point2d x1 y1) (Point2d x2 y2) =
+    Vector2d (x2 - x1) (y2 - y1)
 
 
 components :: Vector2d -> ( Double, Double )
 components (Vector2d x y) =
     ( x, y )
+
+
+componentIn :: Direction2d -> Vector2d -> Double
+componentIn (Direction2d dx dy) (Vector2d vx vy) =
+    vx * dx + vy * dy
 
 
 xComponent :: Vector2d -> Double
