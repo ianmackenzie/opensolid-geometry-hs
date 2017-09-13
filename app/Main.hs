@@ -16,5 +16,7 @@ testAxis =
 
 main :: IO ()
 main = do
-    print (Point2d.distanceAlong testAxis $ Point2d 1 1)
-    print (Vector2d.componentIn Direction2d.y $ Vector2d 3 4)
+    let point = Point2d.withCoordinates ( 1, 1 )
+    let vector = Vector2d.withComponents ( 3, 4 )
+    print (Point2d.distanceAlong testAxis point)
+    print (Vector2d.componentIn Direction2d.y vector)
