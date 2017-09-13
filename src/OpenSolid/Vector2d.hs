@@ -10,7 +10,6 @@ module OpenSolid.Vector2d
 
 import Prelude hiding (length)
 import OpenSolid.Geometry.Types
-import {-# SOURCE #-} qualified OpenSolid.Direction2d as Direction2d
 
 
 zero :: Vector2d
