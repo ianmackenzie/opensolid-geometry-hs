@@ -56,14 +56,10 @@ data Direction3d
 
 
 data Axis2d
-    = Axis2d
-        { originPoint :: !Point2d
-        , direction :: !Direction2d
-        } deriving (Eq, Show)
+    = Axis2d Point2d Direction2d
+        deriving (Eq, Show)
 
 
 data Axis3d
-    = Axis3d
-        { originPoint :: !Point3d
-        , direction :: !Direction3d
-        } deriving (Eq, Show)
+    = Axis3d Point3d Direction3d
+        deriving (Eq, Show)

@@ -3,7 +3,8 @@ module OpenSolid.Axis2d
     , direction
     ) where
 
-import OpenSolid.Geometry.Types (Axis2d, Point2d, Direction2d)
+
+import OpenSolid.Geometry.Types
 
 
 originPoint :: Axis2d -> Point2d
