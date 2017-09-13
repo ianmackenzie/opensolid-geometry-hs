@@ -9,7 +9,6 @@ module OpenSolid.Point2d
 
 import OpenSolid.Geometry.Types
 import qualified OpenSolid.Vector2d as Vector2d
-import {-# SOURCE #-} qualified OpenSolid.Axis2d as Axis2d
 
 
 origin :: Point2d
@@ -38,6 +37,5 @@ yCoordinate (Point2d _ y) =
 
 
 distanceAlong :: Axis2d -> Point2d -> Double
-distanceAlong axis point =
-    Vector2d.componentIn (Axis2d.direction axis) $
-        Vector2d.from (Axis2d.originPoint axis) point
+distanceAlong (Axis2d originPoint direction) point =
+    Vector2d.componentIn direction (Vector2d.from originPoint point)
