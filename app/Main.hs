@@ -10,8 +10,9 @@ import qualified OpenSolid.Axis2d as Axis2d
 testAxis :: Axis2d
 testAxis =
     Axis2d.with
-        (Axis2d.OriginPoint Point2d.origin)
-        (Axis2d.Direction (Direction2d.withPolarAngle (pi / 4)))
+        ( Axis2d.OriginPoint $ Point2d.origin
+        , Axis2d.Direction $ Direction2d.withPolarAngle (pi / 4)
+        )
 
 
 main :: IO ()

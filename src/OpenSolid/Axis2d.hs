@@ -23,8 +23,8 @@ y =
     Axis2d Point2d.origin Direction2d.y
 
 
-with :: OriginPoint -> Direction -> Axis2d
-with (OriginPoint originPoint) (Direction direction) =
+with :: ( OriginPoint, Direction ) -> Axis2d
+with ( OriginPoint originPoint, Direction direction ) =
     Axis2d originPoint direction
 
 
