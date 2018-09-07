@@ -1,65 +1,44 @@
 module OpenSolid.Geometry.Types
-    ( Point2d(..)
-    , Point3d(..)
-    , Vector2d(..)
-    , Vector3d(..)
-    , Direction2d(..)
-    , Direction3d(..)
-    , Axis2d(..)
-    , Axis3d(..)
+    ( Point2d
+    , Point3d
+    , Vector2d
+    , Vector3d
+    , Direction2d
+    , Direction3d
+    , Axis2d
+    , Axis3d
     ) where
 
-
-data Point2d
-    = Point2d
-        {-# UNPACK #-} !Double
-        {-# UNPACK #-} !Double
-        deriving (Eq, Show)
+import qualified OpenSolid.Geometry.Internal as Internal
 
 
-data Point3d
-    = Point3d
-        {-# UNPACK #-} !Double
-        {-# UNPACK #-} !Double
-        {-# UNPACK #-} !Double
-        deriving (Eq, Show)
+type Point2d =
+    Internal.Point2d
 
 
-data Vector2d
-    = Vector2d
-        {-# UNPACK #-} !Double
-        {-# UNPACK #-} !Double
-        deriving (Eq, Show)
+type Point3d =
+    Internal.Point3d
 
 
-data Vector3d
-    = Vector3d
-        {-# UNPACK #-} !Double
-        {-# UNPACK #-} !Double
-        {-# UNPACK #-} !Double
-        deriving (Eq, Show)
+type Vector2d =
+    Internal.Vector2d
 
 
-data Direction2d
-    = Direction2d
-        {-# UNPACK #-} !Double
-        {-# UNPACK #-} !Double
-        deriving (Eq, Show)
+type Vector3d =
+    Internal.Vector3d
 
 
-data Direction3d
-    = Direction3d
-        {-# UNPACK #-} !Double
-        {-# UNPACK #-} !Double
-        {-# UNPACK #-} !Double
-        deriving (Eq, Show)
+type Direction2d =
+    Internal.Direction2d
 
 
-data Axis2d
-    = Axis2d Point2d Direction2d
-        deriving (Eq, Show)
+type Direction3d =
+    Internal.Direction3d
 
 
-data Axis3d
-    = Axis3d Point3d Direction3d
-        deriving (Eq, Show)
+type Axis2d =
+    Internal.Axis2d
+
+
+type Axis3d =
+    Internal.Axis3d
